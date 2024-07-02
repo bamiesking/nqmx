@@ -1,0 +1,405 @@
+---
+title: "Progress towards harnessing White Rabbit time synchronisation for long-distance quantum communications"
+author: "Ben Amies-King"
+institute: "School of Physics, Engineering and Technology<br/>University of York"
+date: 2024-06-20
+date-format: "Do MMMM YYYY"
+footer: "<div>B Amies-King</div> <div>NQM 10 Newcastle</div> <div>20th June 2024</div>"
+mainfont: "CMU Bright"
+format:
+  revealjs:
+    theme: default
+    logo: img/uoy.svg
+    css: slides.css
+    menu: false
+    width: 1500
+    height: 800
+    html-math-method: mathjax
+    bibliography: refs.bib
+    csl: aps.csl
+---
+
+## Overview of QKD {.unnumbered .unlisted}
+![](img/qkd-sketches/qkd-alice-bob.svg){width=100% fig-align=center .margin-top}
+
+::: {.notes}
+- RSA and Diffie-Hellman key exchange not secure - possibly near future.
+- Want to communicate in a way that doesn't assume anything about your attacker
+- QKD enables this through encoding on photons - no cloning theorem
+- Alice (Bob) sends (receives) random bit values.
+- By randomly selecting encoding basis, it's impossible to systematically intercept and resend Alice's signal without adding noise.
+:::
+
+## Overview of QKD {.unnumbered .unlisted auto-animate=true}
+![](img/qkd-sketches/qkd-alice-bob-eve.svg){width=100% fig-align=center .margin-top}
+
+::: {.notes}
+- If an eavesdropper is present, they want to gain information about the key without being detected.
+- Her best strategy is to also measure in a random basis and resend her measurement to Bob.
+- When A&B announce their bases, they can see an increased error rate due to Eve.
+:::
+
+
+## Overview of QKD {.unnumbered .unlisted auto-animate=true}
+
+
+:::: {.columns}
+::: {.column}
+- Quantum key distribution enables *information-theoretically secure* communications.
+- No assumptions about an eavesdropper's computational ability.
+- All noise is attributed to an attacker, and leaked information is bounded by security proofs.
+:::
+
+::: {.column}
+![](img/qkd-sketches/qkd-alice-bob-eve.svg){width=100% .margin-left .margin-bottom}
+
+![](img/qkd-sketches/skc0.png){width=100% .margin-left .margin-top}
+
+:::
+
+::::
+
+## Timing requirements for QKD {auto-animate=true}
+![](img/timing/clock-sync-sketch.svg){width=100% .margin-top}
+
+
+## Timing requirements for QKD {.unnumbered .unlisted auto-animate=true}
+:::: {.columns}
+::: {.column width=60% }
+- QKD requires Alice and Bob to match up their corresponding preparation and measurement events.
+- The required synchronisation accuracy is related to the clock rate of their encoding.
+  - 1 GHz pulses require timing accuracy better than 1 ns.
+
+::: {.fragment fragment-index=3}
+- They must also be able to agree on an equally accurate start time.
+:::
+:::
+
+::: {.column width=40%}
+![](img/timing/clock-sync-sketch.svg){width=100%}
+
+$$
+f_{A} = f_{B}
+$$
+
+$$
+\sigma_{\Delta t}\cdot f_\text{QKD} \ll 1
+$$
+
+:::
+::::
+
+## The White Rabbit technology
+:::: {.columns}
+::: {.column width=60% }
+- White Rabbit, developed at CERN, is an extension to synchronous Ethernet (SyncE) and the Precision Time Protocol (PTP).
+- It provides sub-nanosecond timing synchronisation over optical fibre, with typical jitter in the tens of picoseconds.
+- Standardised in 2020: [IEEE1588-2019](https://standards.ieee.org/ieee/1588/6825/).
+- Open-source hardware and software designs - no vendor lock-in. 
+  - Available off-the-shelf in various form factors from a range of suppliers.
+:::
+::: {.column width=40%}
+![White Rabbit switch](img/wr-devices/wr-switch.png)
+
+![White Rabbit nodes (WR-LEN)](img/wr-devices/wr-len-3.png){.margin-top}
+
+:::
+::::
+
+## {background-video="img/wr-animation/wr-free-running.mp4" background-size=contain}
+
+## {background-video="img/wr-animation/wr-syntonisation.mp4" background-size=contain}
+
+## {background-video="img/wr-animation/wr-coarse-synchronisation.mp4" background-size=contain}
+
+## {background-video="img/wr-animation/wr-fine-synchronisation.mp4" background-size=contain}
+
+
+## Our work towards WR-supported QKD
+
+:::: {.columns .fragment .margin-top .margin-bottom }
+::: {.column}
+- Long-haul White Rabbit links
+:::
+::: {.column}
+![](img/wr-overview/wr-long-haul-sketch.svg){width=100%}
+:::
+::::
+
+:::: {.columns .fragment }
+::: {.column .margin-top}
+- Transferring WR timing accuracy to $t_0$ agreement
+:::
+::: {.column .margin-top}
+![](img/wr-overview/wr-t0-sketch.svg){width=100%}
+:::
+::::
+
+:::: {.columns .fragment}
+::: {.column .margin-top}
+- Coexistence of White Rabbit and quantum signals
+:::
+::: {.column .margin-top}
+![](img/wr-overview/wr-coexistence-sketch.svg){width=100%}
+:::
+::::
+
+::: {.notes}
+- Keep it brief
+:::
+
+## Aside: motivation for long-haul WR {.unnumbered .unlisted auto-animate=true}
+![](img/ukie/map.png){width=90% fig-align=center}
+
+::: {.notes}
+- QKD over real-world infrastructure is of increasing interest as the technology matures
+:::
+
+## Aside: motivation for long-haul WR {.unnumbered .unlisted auto-animate=true}
+:::: {.columns}
+::: {.column width=50%}
+- QKD feasibility study over 224 km undersea fibre between Great Britain and Ireland.
+- 38 dB end-to-end loss, equal to 0.17 dB/km.
+  - Challenging even with ultra-low-loss fibre and cryogenic detectors.
+
+![](img/ukie/sim.png){width=100% .fragment .fade-in fragment-index=1}
+:::
+
+::: {.column width=50% .text-justify}
+![](img/ukie/map.png){.margin-left}
+
+:::
+::::
+
+![](img/ukie/qr.png){.absolute top=-5% right=-5% width="100" height="100"}
+
+## Our work: long-haul {.unnumbered .unlisted transition=fade-in-out}
+:::: {.columns}
+::: {.column}
+::: {}
+- Previous work: 125 km, 140 km [@kaur; @dierikx]
+:::
+::: {}
+|        $L$       | $\mu_{\Delta t}$ | $\sigma_{\Delta t}$ |
+|:----------------:|:----------------:|:-------------------:|
+|  $50~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $100~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $150~\text{km}$  | $< 10~\text{ps}$ |    $24.87~\text{ps}$   |
+:::
+:::
+::: {.column}
+![](img/wr-long-haul/wr-150km.svg){width=100% .margin-left }
+:::
+::::
+
+## Our work: long-haul {.unnumbered .unlisted transition=fade-in-out}
+:::: {.columns}
+::: {.column}
+::: {}
+- Previous work: 125 km, 140 km [@kaur; @dierikx]
+:::
+::: {}
+|        $L$       | $\mu_{\Delta t}$ | $\sigma_{\Delta t}$ |
+|:----------------:|:----------------:|:-------------------:|
+|  $50~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $100~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $150~\text{km}$  | $< 10~\text{ps}$ |    $24.87~\text{ps}$   |
+| $\color{red}200~\text{km}$  | $\color{red}-$ |    $\color{red}-$   |
+:::
+:::
+::: {.column}
+![](img/wr-long-haul/wr-200km-failure.svg){width=100% .margin-left }
+:::
+::::
+
+## Our work: long-haul {.unnumbered .unlisted transition=fade-in-out}
+:::: {.columns}
+::: {.column}
+::: {}
+- Previous work: 125 km, 140 km [@kaur; @dierikx]
+:::
+::: {}
+|        $L$       | $\mu_{\Delta t}$ | $\sigma_{\Delta t}$ |
+|:----------------:|:----------------:|:-------------------:|
+|  $50~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $100~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $150~\text{km}$  | $< 10~\text{ps}$ |    $24.87~\text{ps}$   |
+| $200~\text{km}$  | $126.6~\mathrm{\upmu s}$ |    $20.09~\text{ps}$   |
+:::
+:::
+::: {.column}
+![](img/wr-long-haul/wr-200km.svg){width=100% .margin-left }
+:::
+::::
+
+## Our work: long-haul {.unnumbered .unlisted transition=fade-in}
+:::: {.columns}
+::: {.column }
+::: {}
+- Previous work: 125 km, 140 km [@kaur; @dierikx]
+:::
+::: {}
+|        $L$       | $\mu_{\Delta t}$ | $\sigma_{\Delta t}$ |
+|:----------------:|:----------------:|:-------------------:|
+|  $50~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $100~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $150~\text{km}$  | $< 10~\text{ps}$ |    $24.87~\text{ps}$   |
+| $200~\text{km}$  | $126.6~\mathrm{\upmu s}$ |    $20.09~\text{ps}$   |
+| $\color{red}250~\text{km}$  | $\color{red}-$ |  $\color{red}-$     |
+:::
+
+:::
+::: {.column }
+![](img/wr-long-haul/wr-250km-failure.svg){width=100% .margin-left }
+:::
+::::
+
+## Our work: long-haul {.unnumbered .unlisted transition=fade-in}
+:::: {.columns}
+::: {.column }
+::: {}
+- Previous work: 125 km, 140 km [@kaur; @dierikx]
+:::
+::: {}
+|        $L$       | $\mu_{\Delta t}$ | $\sigma_{\Delta t}$ |
+|:----------------:|:----------------:|:-------------------:|
+|  $50~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $100~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $150~\text{km}$  | $< 10~\text{ps}$ |    $24.87~\text{ps}$   |
+| $200~\text{km}$  | $126.6~\mathrm{\upmu s}$ |    $20.09~\text{ps}$   |
+| $250~\text{km}$  | $250.5~\mathrm{\upmu s}$ |    $18.55~\text{ps}$   |
+:::
+
+:::
+::: {.column}
+![](img/wr-long-haul/wr-250km.svg){width=100% .margin-left}
+
+:::
+::::
+
+## Our work: long-haul {.unnumbered .unlisted transition=fade-in}
+:::: {.columns}
+::: {.column }
+::: {}
+- Previous work: 125 km, 140 km [@kaur; @dierikx]
+:::
+::: {}
+|        $L$       | $\mu_{\Delta t}$ | $\sigma_{\Delta t}$ |
+|:----------------:|:----------------:|:-------------------:|
+|  $50~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $100~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $150~\text{km}$  | $< 10~\text{ps}$ |    $24.87~\text{ps}$   |
+| $200~\text{km}$  | $126.6~\mathrm{\upmu s}$ |    $20.09~\text{ps}$   |
+| $250~\text{km}$  | $250.5~\mathrm{\upmu s}$ |    $18.55~\text{ps}$   |
+| $\color{red}300~\text{km}$  | $\color{red}-$ |  $\color{red}-$     |
+:::
+
+:::
+::: {.column}
+![](img/wr-long-haul/wr-300km-failure.svg){width=100% .margin-left}
+
+:::
+::::
+
+
+## Our work: long-haul {.unnumbered .unlisted transition=fade-in}
+:::: {.columns}
+::: {.column }
+::: {}
+- Previous work: 125 km, 140 km [@kaur; @dierikx]
+:::
+::: {}
+|        $L$       | $\mu_{\Delta t}$ | $\sigma_{\Delta t}$ |
+|:----------------:|:----------------:|:-------------------:|
+|  $50~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $100~\text{km}$  | $< 10~\text{ps}$ |    $21.72~\text{ps}$   |
+| $150~\text{km}$  | $< 10~\text{ps}$ |    $24.87~\text{ps}$   |
+| $200~\text{km}$  | $126.6~\mathrm{\upmu s}$ |    $20.09~\text{ps}$   |
+| $250~\text{km}$  | $250.5~\mathrm{\upmu s}$ |    $18.55~\text{ps}$   |
+| $300~\text{km}$  | $497.0~\mathrm{\upmu s}$ |    $17.82~\text{ps}$   |
+:::
+
+:::
+::: {.column}
+![](img/wr-long-haul/wr-300km.svg){width=100% .margin-left}
+
+:::
+::::
+
+::: {.notes}
+- 54.32 km = 271.6 km @ 0.2 dB / km
+:::
+
+## Our work: start-time agreement {.unnumbered .unlisted}
+:::: {.columns}
+::: {.column}
+- Thin wrapper around White Rabbit, transferring WR timing accuracy to $t_0$ agreement.
+- Running on ROCK 5B single-board computer, but can be compiled for any target.
+- Operates using the classical data link provided by WR.
+- Supports tunneling of classical data over WR - ideal for remote control and monitoring.
+:::
+
+::: {.column}
+![](img/wr-overview/wr-t0-sketch.svg){width=100% .margin-left}
+
+![](img/wr-devices/radxa_rock_5b.jpg){width=50% fig-align=center}
+:::
+::::
+
+
+::: {.notes}
+- Any target: e.g. FPGA SoCs; can be integrated into QKD hardware in the future
+:::
+
+## Our work: coexistence {.unnumbered .unlisted}
+:::: {.columns}
+::: {.column}
+- Coexistence over 1 km with entangled photons
+
+- Informed by measurement of Raman scattering from WR SFPs
+
+![](img/wr-coexistence/oc_backwards_1310.png){width=70% fig-align=center}
+
+:::
+
+::: {.column }
+![](img/wr-coexistence/Setup_EPS.svg){fig-align=center width=80%}
+
+|         States        | WR off | WR on |
+|:---------------------:|:------:|:-----:|
+|$\ket{VV}$ & $\ket{VH}$|  98.89 | 96.45 |
+|$\ket{HH}$ & $\ket{HV}$|  99.14 | 98.10 |
+|$\ket{DD}$ & $\ket{DA}$|  99.27 | 97.06 |
+|$\ket{AA}$ & $\ket{AD}$|  99.42 | 97.61 |
+:::
+::::
+
+
+## Summary
+- Progress towards WR-enabled QKD in a variety of physical scenarios
+    - Long-haul international fibre  
+    - $t_0$ agreement with WR timing accuracy
+    - Coexistence on metropolitan scale
+- Next steps:
+  - Single-fibre WR over longer distances (dual wavelengths)
+  - Using WR to develop a flexible support layer for QKD
+
+## White Rose QIST Workshop
+
+:::: {.columns}
+::: {.column}
+- 11th-12th July
+- Registration still open
+- Particularly aimed at ECRs
+- Organised by White Rose universities
+:::
+
+::: {.column}
+![](img/qist-workshop/logo.svg)
+
+![](img/qist-workshop/qr.png){.absolute top=-5% right=-5% width="150" height="150"}
+:::
+::::
+
+## References
+

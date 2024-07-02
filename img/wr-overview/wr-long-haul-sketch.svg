@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="72.779617mm"
+   height="5.2642703mm"
+   viewBox="0 0 72.779617 5.2642703"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient42">
+      <stop
+         style="stop-color:#626262;stop-opacity:1;"
+         offset="0"
+         id="stop42" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.42745098;"
+         offset="0.50595236"
+         id="stop44" />
+      <stop
+         style="stop-color:#5e5e5e;stop-opacity:1;"
+         offset="1"
+         id="stop43" />
+    </linearGradient>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         id="path71" />
+    </marker>
+    <linearGradient
+       xlink:href="#linearGradient42"
+       id="linearGradient43"
+       x1="137.3632"
+       y1="108.69755"
+       x2="176.16866"
+       y2="108.69755"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5348546,0,0,1.5348546,-91.348482,-58.137388)" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-112.87462,-105.54715)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:url(#linearGradient43);stroke-width:0.15;stroke-linejoin:round;stroke-dasharray:1.2, 0.15;stroke-dashoffset:0.15;stroke-opacity:0.866667"
+       d="m 119.48406,108.69755 h 26.69497 6.17076 26.69499"
+       id="path36" />
+    <g
+       id="g87">
+      <g
+         id="g183-2"
+         transform="translate(90.515981,44.717113)">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.159;stroke-dasharray:none;stroke-opacity:1"
+           d="m 88.589054,61.946088 h 6.469695 v 4.068706 h -6.469695 z"
+           id="path183-3" />
+        <text
+           xml:space="preserve"
+           style="font-weight:500;font-size:3.31536px;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.456349"
+           x="91.848763"
+           y="65.130875"
+           id="text183-6"><tspan
+             style="font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15;stroke-dasharray:none"
+             x="91.848763"
+             y="65.130875"
+             id="tspan183-5">WR</tspan></text>
+      </g>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.159;stroke-dasharray:none;stroke-opacity:1"
+         d="m 112.95412,106.6632 h 6.46969 v 4.06871 h -6.46969 z"
+         id="path160-8" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:3.31536px;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.456349"
+       x="116.21382"
+       y="109.84798"
+       id="text160-0"><tspan
+         style="font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15;stroke-dasharray:none"
+         x="116.21382"
+         y="109.84798"
+         id="tspan160-4">WR</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.15;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0.15;stroke-opacity:0.866667;marker-start:url(#ArrowWideRounded);marker-end:url(#ArrowWideRounded)"
+       d="m 120.48971,107.63921 h 57.54942"
+       id="path40" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.79698px;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+       x="145.05406"
+       y="106.91243"
+       id="text175-7"><tspan
+         id="tspan175-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.79698px;font-family:Verdana;-inkscape-font-specification:'Verdana, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15"
+         x="145.05406"
+         y="106.91243">&gt;100 km</tspan></text>
+  </g>
+</svg>
